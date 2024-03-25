@@ -21,3 +21,7 @@ The chat app for mobile device using React Native. The app will provide users wi
 - Google Firebase authentication.
 - Firebase Cloud Storage
 - Gifted Chat library
+
+## Demo Video
+
+[screen-recording-task5-2.webm](https://github.com/nozomis0129/chat-demo/assets/129555124/9f1e64e7-ebb2-4701-af12-3d2c494c2a89)
