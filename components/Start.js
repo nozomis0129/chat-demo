@@ -8,6 +8,8 @@ import {
   TextInput,
   ImageBackground,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 
 const Start = ({ navigation }) => {
@@ -91,6 +93,10 @@ const Start = ({ navigation }) => {
             color="#757083"
           />
         </View>
+        {/* to prevent  the keyboard covers the name and background color picker */}
+        {Platform.OS === "ios" ? (
+          <KeyboardAvoidingView behavior="padding" />
+        ) : null}
       </ImageBackground>
     </View>
   );
