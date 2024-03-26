@@ -11,13 +11,30 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 const Start = ({ navigation }) => {
+  const auth = getAuth();
   const [name, setName] = useState("");
   const image = require("../assets/background-image.png");
   const icon = require("../assets/icon.png");
 
   const [selectedColor, setSelectedColor] = useState("");
+
+  const signInUser = () => {
+    signInAnonymously(auth)
+      .then((result) => {
+        navigation.navigate("Chat", {
+          name: name,
+          backgroundColor: selectedColor,
+          id: result.user.uid,
+        });
+        Alert.alert("Signed in Successfully!");
+      })
+      .catch((error) => {
+        Alert.alert("Unable to sign in, try later again.");
+      });
+  };
 
   const handleColorSelection = (color) => {
     setSelectedColor(color);
@@ -83,13 +100,8 @@ const Start = ({ navigation }) => {
           </View>
           <Button
             title="Start Chatting"
-            onPress={() =>
-              navigation.navigate("Chat", {
-                name: name,
-                backgroundColor: selectedColor,
-              })
-            }
             style={styles.startButton}
+            onPress={signInUser}
             color="#757083"
           />
         </View>
