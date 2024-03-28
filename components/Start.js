@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
   Image,
   TextInput,
   ImageBackground,
@@ -194,6 +193,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#757083",
     paddingVertical: 10,
     paddingHorizontal: 20,
+    width: "88%",
+    height: 58,
+    alignItems: "center",
+    justifyContent: "center",
   },
   startText: {
     color: "white",
