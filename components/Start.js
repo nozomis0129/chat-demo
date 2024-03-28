@@ -41,8 +41,12 @@ const Start = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        keyboardVerticalOffset={Platform.OS === "ios" ? -160 : 0}
+      >
         <Text style={styles.title}>Chat App</Text>
         <View style={styles.whiteContainer}>
           <View style={styles.inputContainer}>
@@ -112,12 +116,8 @@ const Start = ({ navigation }) => {
             <Text style={styles.startText}>Start Chatting</Text>
           </TouchableOpacity>
         </View>
-        {/* to prevent the keyboard covers the name and background color picker */}
-        {Platform.OS === "ios" ? (
-          <KeyboardAvoidingView behavior="padding" />
-        ) : null}
-      </ImageBackground>
-    </View>
+      </KeyboardAvoidingView>
+    </ImageBackground>
   );
 };
 
