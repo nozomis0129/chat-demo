@@ -54,6 +54,10 @@ const Start = ({ navigation }) => {
               onChangeText={setName}
               placeholder="Your Name"
               placeholderTextColor="#757083"
+              accessible={true}
+              accessibilityLabel="Enter your name"
+              accessibilityHint="Type your name here, this name will be visible to others in the chat"
+              accessibilityRole="text"
             />
           </View>
           <Text style={styles.fontColor}>Chooes Background Color.</Text>
@@ -99,14 +103,17 @@ const Start = ({ navigation }) => {
               onPress={() => handleColorSelection("#B9C6AE")}
             />
           </View>
-          <Button
-            title="Start Chatting"
+          <TouchableOpacity
             style={styles.startButton}
             onPress={signInUser}
-            color="#757083"
-          />
+            accessibilityLabel="Enter the chat"
+            accessibilityHint="Press the button to open a new window and start chatting with others"
+            accessibilityRole="button"
+          >
+            <Text style={styles.startText}>Start Chatting</Text>
+          </TouchableOpacity>
         </View>
-        {/* to prevent  the keyboard covers the name and background color picker */}
+        {/* to prevent the keyboard covers the name and background color picker */}
         {Platform.OS === "ios" ? (
           <KeyboardAvoidingView behavior="padding" />
         ) : null}
@@ -182,17 +189,14 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     margin: 10,
-    //opacity: 0.5,
   },
   startButton: {
     backgroundColor: "#757083",
-    borderRadius: 8,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    marginTop: 10,
   },
-  button: {
-    backgroundColor: "#090C08",
+  startText: {
+    color: "white",
   },
 });
 
