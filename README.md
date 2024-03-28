@@ -38,6 +38,7 @@ npm install -g expo-cli
 - Firebase Storage: Activate storage by clicking on "Start now" and set its rules to: allow read, write: if true;
 - Configuration: Under the project settings, add a new app and follow the steps provided by Firebase until you obtain the configuration code.
 
+```
 const firebaseConfig = {
 apiKey: "YOUR_API_KEY",
 authDomain: "YOUR_AUTH_DOMAIN",
@@ -46,6 +47,7 @@ storageBucket: "YOUR_STORAGE_BUCKET",
 messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
 appId: "YOUR_APP_ID"
 };
+```
 
 - Add this code to your main component and configure it in your app.
 
@@ -61,18 +63,24 @@ git clone https://github.com/nozomis0129/chat-demo.git
 
 Change the directory
 
-`cd chat-demo`
+```
+cd chat-demo
+```
 
 Install the dependencies
 
-`npm unstall`
+```
+npm unstall
+```
 
 Run the server
 
-`npm start`
+```
+npm start
+```
 
 On your emulator or the Expo Go app on your phone, click on the running link after logging in to your Expo account.
 
 ## User Interface
 
-![screenshot-start](https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1)
+<img width="50" src="https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1">
