@@ -1,6 +1,9 @@
 import { useEffect } from "react";
-import { StyleSheet, Alert } from "react-native";
 import { useNetInfo } from "@react-native-community/netinfo";
+import { Alert, LogBox } from "react-native";
+LogBox.ignoreLogs([
+  'You are initializing Firebase Auth for React Native without providing AsyncStorage. Auth state will default to memory persistence and will not persist between sessions. In order to persist auth state, install the package "@react-native-async-storage/async-storage" and provide it to initializeAuth:',
+]);
 
 // import the screens
 import Start from "./components/Start";
@@ -13,13 +16,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // Create the navigator
 const Stack = createNativeStackNavigator();
 
-// import Firestore
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   disableNetwork,
   enableNetwork,
 } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const App = () => {
   const connectionStatus = useNetInfo();
@@ -38,6 +41,7 @@ const App = () => {
 
   // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
+  const storage = getStorage(app);
 
   useEffect(() => {
     if (connectionStatus.isConnected === false) {
@@ -52,12 +56,12 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Start">
         <Stack.Screen name="Start" component={Start} />
-
         <Stack.Screen name="Chat">
           {(props) => (
             <Chat
               isConnected={connectionStatus.isConnected}
               db={db}
+              storage={storage}
               {...props}
             />
           )}
@@ -66,14 +70,5 @@ const App = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
