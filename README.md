@@ -27,7 +27,9 @@ The chat app for mobile device using React Native. The app will provide users wi
 
 ### 1. Make sure you have Expo CLI installed
 
+```
 npm install -g expo-cli
+```
 
 ### 2. Database configuration
 
@@ -49,22 +51,20 @@ appId: "YOUR_APP_ID"
 };
 ```
 
-- Add this code to your main component and configure it in your app.
-
-import { initializeApp } from "firebase/app";
-
-const app = initializeApp(firebaseConfig);
+- Update the 'firebaseConfig.js' in your project with the above configuration object
 
 ## 3. Installation
 
 clone the repository:
 
+```
 git clone https://github.com/nozomis0129/chat-demo.git
+```
 
-Change the directory
+Navigate into the project directory:
 
 ```
-cd chat-demo
+cd chat-demo:
 ```
 
 Install the dependencies
@@ -73,14 +73,14 @@ Install the dependencies
 npm unstall
 ```
 
-Run the server
+Start the Expo project:
 
 ```
-npm start
+expo start
 ```
 
 On your emulator or the Expo Go app on your phone, click on the running link after logging in to your Expo account.
 
 ## User Interface
 
-<img width="50" src="https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1">
+<img width="200" src="https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1">
