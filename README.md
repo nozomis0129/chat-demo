@@ -61,11 +61,7 @@ clone the repository:
 git clone https://github.com/nozomis0129/chat-demo.git
 ```
 
-Navigate into the project directory:
-
-```
-cd chat-demo:
-```
+Navigate into the project directory
 
 Install the dependencies
 
@@ -83,4 +79,4 @@ On your emulator or the Expo Go app on your phone, click on the running link aft
 
 ## User Interface
 
-<img width="200" src="https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1">
+<img width="300" src="https://github.com/nozomis0129/chat-demo/assets/129555124/c32d03dc-c1f2-40c2-9d3f-bdcc4d522db1">
