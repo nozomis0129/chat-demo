@@ -36,7 +36,7 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
             createdAt: new Date(doc.data().createdAt.toMillis()),
           });
         });
-        //cacheMessagesHistory;
+
         cacheMessagesHistory(newMessages);
         setMessages(newMessages);
       });
